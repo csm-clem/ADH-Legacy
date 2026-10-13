@@ -1,0 +1,69 @@
+name: Windows executable
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Cargo.toml'
+      - 'Cargo.lock'
+      - 'crates/**'
+      - '.github/workflows/windows-release.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: windows-release
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build and publish Windows x64
+    runs-on: windows-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+      - name: Test
+        run: cargo test --workspace --locked --target x86_64-pc-windows-msvc
+      - name: Build executable
+        run: cargo build --release --locked -p adh-app --target x86_64-pc-windows-msvc
+      - name: Prepare download
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Path release
+          Copy-Item target/x86_64-pc-windows-msvc/release/adh-app.exe release/Atlas-des-harmoniques-Windows-x64.exe
+          Copy-Item LICENSE-MIT, LICENSE-APACHE, LICENSE-OFL, LICENSE-assets.md, README.md release/
+          Compress-Archive -Path release/* -DestinationPath Atlas-des-harmoniques-Windows-x64.zip
+          (Get-FileHash release/Atlas-des-harmoniques-Windows-x64.exe -Algorithm SHA256).Hash + "  Atlas-des-harmoniques-Windows-x64.exe" | Set-Content -Encoding ascii SHA256SUMS.txt
+      - name: Keep build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Atlas-des-harmoniques-Windows-x64
+          path: |
+            release/
+            SHA256SUMS.txt
+          if-no-files-found: error
+      - name: Publish GitHub Release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          $tag = "windows-build-${{ github.run_number }}"
+          @"
+          Version Windows 64 bits de L'Atlas des harmoniques.
+
+          Téléchargez **Atlas-des-harmoniques-Windows-x64.exe**, puis ouvrez-le. Rust n'est pas nécessaire.
+          L'archive ZIP contient aussi les licences et la documentation.
+
+          Compilation issue du commit ${{ github.sha }} ; tests du projet exécutés sous Windows.
+          "@ | Set-Content -Encoding utf8 release-notes.md
+          gh release create $tag release/Atlas-des-harmoniques-Windows-x64.exe Atlas-des-harmoniques-Windows-x64.zip SHA256SUMS.txt --target "${{ github.sha }}" --title "Atlas des harmoniques — Windows x64 (build ${{ github.run_number }})" --notes-file release-notes.md
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
