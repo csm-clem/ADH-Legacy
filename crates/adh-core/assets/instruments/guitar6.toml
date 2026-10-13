@@ -1,0 +1,41 @@
+id = "guitar6"
+name = "Guitare 6 cordes"
+image = "g6.jpg"
+fret_count = 22
+strings = [[616, 540], [690, 644], [762, 744], [836, 846], [912, 946], [984, 1048]]
+
+tunings = [
+  { name = "Standard",        tuning = "E2 A2 D3 G3 B3 E4" },
+  { name = "-1/2 ton",        tuning = "E♭2 A♭2 D♭3 G♭3 B♭3 E♭4" },
+  { name = "-1 ton",          tuning = "D2 G2 C3 F3 A3 D4" },
+  { name = "-2 tons",         tuning = "C2 F2 B♭2 E♭3 G3 C4" },
+  { name = "Drop D",          tuning = "D2 A2 D3 G3 B3 E4" },
+  { name = "Drop D variante", tuning = "D2 A2 D3 G3 A3 E4" },
+  { name = "Double Drop D",   tuning = "D2 A2 D3 G3 B3 D4" },
+  { name = "Drop C",          tuning = "C2 G2 C3 F3 A3 D4" },
+  { name = "Drop E",          tuning = "E2 B2 E3 A3 C♯4 F♯4" },
+  { name = "Drop B",          tuning = "B1 F♯2 B2 E3 G♯3 C♯4" },
+  { name = "Baritone",        tuning = "B1 E2 A2 D3 F♯3 B3" },
+  { name = "Open C",          tuning = "C2 G2 C3 G3 C4 E4" },
+  { name = "Open Cm",         tuning = "C2 G2 C3 G3 C4 E♭4" },
+  { name = "Open C6",         tuning = "C2 G2 C3 G3 A3 E4" },
+  { name = "Open CM7",        tuning = "C2 G2 E3 G3 B3 E4" },
+  { name = "Open D",          tuning = "D2 A2 D3 G♭3 A3 D4" },
+  { name = "Open Dm",         tuning = "D2 A2 D3 F3 A3 D4" },
+  { name = "Open D5",         tuning = "D2 A2 D3 D3 A3 D4" },
+  { name = "Open D6",         tuning = "D2 A2 D3 G♭3 B3 D4" },
+  { name = "Open Dsus4",      tuning = "D2 A2 D3 G3 A3 D4" },
+  { name = "Open E",          tuning = "E2 B2 E3 G♯3 B3 E4" },
+  { name = "Open Em",         tuning = "E2 B2 E3 G3 B3 E4" },
+  { name = "Open Esus11",     tuning = "E2 A2 E3 G3 B3 E4" },
+  { name = "Open F",          tuning = "F2 A2 C3 F3 C4 F4" },
+  { name = "Open G",          tuning = "D2 G2 D3 G3 B3 D4" },
+  { name = "Open Gm",         tuning = "D2 G2 D3 G3 B♭3 D4" },
+  { name = "Open Gsus4",      tuning = "D2 G2 D3 G3 C4 D4" },
+  { name = "Open G6",         tuning = "D2 G2 D3 G3 B3 E4" },
+  { name = "Open A",          tuning = "E2 A2 E3 A3 C♯4 E4" },
+  { name = "Open Am",         tuning = "E2 A2 E3 A3 C4 E4" },
+  { name = "Dobro Open G",    tuning = "G2 B2 D3 G3 B3 D4" },
+  { name = "Luth ou Vihuela", tuning = "E2 A2 D3 G♭3 B3 E4" },
+  { name = "Nashville",       tuning = "E3 A3 D4 G4 B3 E4" },
+]

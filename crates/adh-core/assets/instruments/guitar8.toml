@@ -1,0 +1,17 @@
+id = "guitar8"
+name = "Guitare 8 cordes"
+image = "g8.jpg"
+fret_count = 24
+strings = [[580, 468], [642, 564], [704, 654], [768, 750], [830, 846], [892, 942], [954, 1036], [1018, 1132]]
+
+tunings = [
+  { name = "Standard",       tuning = "F♯1 B1 E2 A2 D3 G3 B3 E4" },
+  { name = "Standard aigu",  tuning = "B1 E2 A2 D3 G3 B3 E4 A4" },
+  # CORRECTION : la source Qt (src/instruments/guitar8/guitar8.cpp) déclarait
+  # « B♭1 E♭2 A♭2 D♭3 G♭3 B♭3 E♭4 », soit 7 jetons pour une 8 cordes : le F1
+  # grave avait été oublié lors d'un copier-coller depuis la 7 cordes.
+  { name = "-1/2 ton",       tuning = "F1 B♭1 E♭2 A♭2 D♭3 G♭3 B♭3 E♭4" },
+  { name = "-1 ton",         tuning = "E1 A1 D2 G2 C3 F3 A3 D4" },
+  # CORRECTION : même copier-coller que ci-dessus, le D1 grave manquait.
+  { name = "-2 tons",        tuning = "D1 G1 C2 F2 B♭2 E♭3 G3 C4" },
+]

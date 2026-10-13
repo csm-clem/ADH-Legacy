@@ -1,0 +1,15 @@
+id = "guitar7"
+name = "Guitare 7 cordes"
+image = "g7.jpg"
+fret_count = 24
+strings = [[616, 494], [676, 594], [738, 692], [800, 788], [866, 888], [934, 984], [1006, 1084]]
+
+tunings = [
+  { name = "Standard",       tuning = "B1 E2 A2 D3 G3 B3 E4" },
+  { name = "Standard aigu",  tuning = "E2 A2 D3 G3 B3 E4 A4" },
+  { name = "Drop D",         tuning = "A1 D2 A2 D3 G3 B3 E4" },
+  { name = "Drop A",         tuning = "A1 E2 A2 D3 G3 B3 E4" },
+  { name = "-1/2 ton",       tuning = "B♭1 E♭2 A♭2 D♭3 G♭3 B♭3 E♭4" },
+  { name = "-1 ton",         tuning = "A1 D2 G2 C3 F3 A3 D4" },
+  { name = "-2 tons",        tuning = "G1 C2 F2 B♭2 E♭3 G3 C4" },
+]

@@ -1,0 +1,13 @@
+id = "bass5"
+name = "Basse 5 cordes"
+image = "b5.jpg"
+fret_count = 22
+strings = [[618, 536], [690, 644], [762, 744], [836, 848], [912, 944]]
+
+tunings = [
+  { name = "Standard",  tuning = "B0 E1 A1 D2 G2" },
+  { name = "Drop D",    tuning = "E1 A1 D2 G2 C3" },
+  { name = "Drop C",    tuning = "F♯0 B0 E1 A1 D2" },
+  { name = "-1 ton",    tuning = "A0 E1 A1 D2 G2" },
+  { name = "Open Em",   tuning = "A0 D1 G1 C2 F2" },
+]

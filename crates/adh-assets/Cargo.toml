@@ -1,0 +1,15 @@
+[package]
+name = "adh-assets"
+description = "L'Atlas des harmoniques — visuels embarqués (photos, pastilles, médiators, empreinte)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+authors.workspace = true
+repository.workspace = true
+
+# Attention : ce crate contient les VISUELS, eux aussi MIT/Apache-2.0
+# (voir LICENSE-assets.md à la racine du dépôt).
+
+[dependencies]
+adh-core = { workspace = true }

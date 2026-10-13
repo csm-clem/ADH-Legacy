@@ -1,0 +1,19 @@
+id = "bass4"
+name = "Basse 4 cordes"
+image = "b4.jpg"
+fret_count = 24
+# [début Y, fin Y] en pixels image, corde 0 = corde la plus aiguë (en haut de l'image)
+strings = [[682, 590], [754, 724], [826, 860], [898, 988]]
+
+tunings = [
+  { name = "Standard",        tuning = "E1 A1 D2 G2" },
+  { name = "Drop D",          tuning = "D1 A1 D2 G2" },
+  { name = "Drop C",          tuning = "C1 G1 C2 F2" },
+  { name = "Drop C variante", tuning = "C1 A1 D2 G2" },
+  { name = "-1/2 tons",       tuning = "E♭1 A♭1 D♭2 G♭2" },
+  { name = "-1 ton",          tuning = "D1 G1 C2 F2" },
+  { name = "-2 tons",         tuning = "C1 F1 B♭1 E♭2" },
+  # NOTE : "A2 D2" est le libellé d'origine (src/instruments/bass4/bass4.cpp).
+  # "A1 D2" serait cohérent avec un baritone ; conservé tel quel pour la parité.
+  { name = "Baritone",        tuning = "B0 E1 A2 D2" },
+]

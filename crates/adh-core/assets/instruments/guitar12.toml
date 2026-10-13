@@ -1,0 +1,22 @@
+id = "guitar12"
+name = "Guitare 12 cordes"
+image = "g12.jpg"
+fret_count = 22
+# 6 chœurs de 2 cordes : corde 0..1 = mi, 2..3 = si, 4..5 = sol, 6..7 = ré, 8..9 = la, 10..11 = mi grave
+strings = [
+  [618, 536], [690, 644], [762, 744], [836, 848], [912, 944], [984, 1048],
+  [618, 536], [690, 644], [762, 744], [836, 848], [912, 944], [984, 1048],
+]
+
+# Dans l'app Qt, les libellés étaient écrits « E2E3 A2A3 … » (paires collées) :
+# le parseur ne voyait que 6 jetons et traitait la 12 cordes comme une 6 cordes.
+# Les paires sont ici séparées pour que les 12 cordes soient réellement décrites.
+tunings = [
+  { name = "Standard",    tuning = "E2 E3 A2 A3 D3 D4 G3 G4 B3 B3 E4 E4" },
+  { name = "Drop D",      tuning = "D2 D3 A2 A3 D3 D4 G3 G4 B3 B3 E4 E4" },
+  { name = "Drop C",      tuning = "C2 C3 G2 G3 C3 C4 F3 F4 A3 A3 D4 D4" },
+  { name = "-1 ton",      tuning = "D2 D3 G2 G3 C3 C4 F3 F4 A3 A3 D4 D4" },
+  { name = "Open Em",     tuning = "E2 E3 B2 B3 E3 E4 G3 G4 B3 B3 E4 E4" },
+  { name = "Open E",      tuning = "E2 E3 B2 B3 E3 E4 G♯3 G♯4 B3 B3 E4 E4" },
+  { name = "Open Dsus4",  tuning = "D2 D3 A2 A3 D3 D4 G3 G4 A3 A3 D4 D4" },
+]
