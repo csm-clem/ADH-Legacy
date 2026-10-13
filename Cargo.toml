@@ -1,0 +1,37 @@
+# L'Atlas des harmoniques — réécriture Rust/egui
+# Licence du code : MIT OR Apache-2.0 (voir LICENSE-MIT / LICENSE-APACHE)
+# Les visuels de crates/adh-assets/assets sont sous la même licence (voir LICENSE-assets.md)
+[workspace]
+resolver = "3"
+members = [
+    "crates/adh-core",
+    "crates/adh-assets",
+    "crates/adh-app",
+]
+
+[workspace.package]
+version = "2.0.0"
+edition = "2021"
+rust-version = "1.92"
+license = "MIT OR Apache-2.0"
+authors = ["Tristan Morvan <morvan.tristan@gmail.com>"]
+repository = "https://lecompositeur.com/adh"
+
+[workspace.dependencies]
+adh-core = { path = "crates/adh-core" }
+adh-assets = { path = "crates/adh-assets" }
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+thiserror = "2"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
+panic = "abort"
+
+# Profil utilisé par cargo-dist (voir dist-workspace.toml et tools/release.sh)
+[profile.dist]
+inherits = "release"
+lto = "thin"
+

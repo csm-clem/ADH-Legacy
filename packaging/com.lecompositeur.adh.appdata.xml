@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.lecompositeur.adh</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT OR Apache-2.0</project_license>
+  <name>L'Atlas des harmoniques</name>
+  <summary>Harmoniques naturelles sur guitare et basse, partiel par partiel</summary>
+  <description>
+    <p>
+      L'Atlas des harmoniques répond visuellement à une question simple :
+      si je pince cette corde à cet endroit, quelle note sort, à quelle
+      fréquence, et à combien de cents de la note tempérée ?
+    </p>
+    <p>
+      Sept instruments (basse 4, 5 et 6 cordes ; guitare 6, 7, 8 et 12 cordes),
+      soixante-cinq accordages, les onze premiers partiels, les pastilles de
+      notes, les médiators, l'empreinte de doigt et des accordages
+      personnalisés enregistrés dans les réglages.
+    </p>
+  </description>
+  <url type="homepage">https://lecompositeur.com/adh</url>
+  <developer_name>Tristan Morvan</developer_name>
+  <categories>
+    <category>Education</category>
+    <category>Music</category>
+  </categories>
+  <keywords>
+    <keyword>harmonics</keyword>
+    <keyword>guitar</keyword>
+    <keyword>bass</keyword>
+  </keywords>
+  <provides>
+    <binary>adh-app</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+  <releases>
+    <release version="2.0.0" date="2026-10-13"/>
+  </releases>
+</component>

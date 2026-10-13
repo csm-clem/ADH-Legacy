@@ -1,0 +1,66 @@
+version = 1
+
+# Code source Rust
+[[package]]
+SPDX-FileCopyrightText = "2026 Tristan Morvan"
+SPDX-License-Identifier = "MIT OR Apache-2.0"
+path = [
+  "Cargo.toml",
+  "Cargo.lock",
+  ".gitignore",
+  "crates/**.rs",
+  "crates/**/Cargo.toml",
+  "crates/adh-core/assets/instruments/*.toml",
+  "tools/**",
+  "docs/**",
+  ".vscode/**",
+  "README.md",
+  "LICENSE-assets.md",
+  "REUSE.toml",
+]
+
+# Visuels embarqués : réalisés par les auteurs de l'Atlas, même licence que le code
+# (voir LICENSE-assets.md)
+[[package]]
+SPDX-FileCopyrightText = "2011-2026 Tristan Morvan"
+SPDX-License-Identifier = "MIT OR Apache-2.0"
+path = [
+  "crates/adh-assets/assets/*.jpg",
+  "crates/adh-assets/assets/*.png",
+  "crates/adh-assets/assets/*.svg",
+  "crates/adh-assets/assets/*.ico",
+  "crates/adh-assets/assets/*.icns",
+]
+
+# Police de symboles ♪ ♭ ♮ ♯ : sous-ensemble de Noto Sans Symbols renommé
+# « ADH Symbols », licence OFL-1.1 (texte dans LICENSE-OFL)
+[[package]]
+SPDX-FileCopyrightText = "2022 The Noto Project Authors <https://github.com/notofonts/symbols>"
+SPDX-License-Identifier = "OFL-1.1"
+path = "crates/adh-assets/assets/fonts/adh-symbols.ttf"
+comment = """
+Version modifiée (4 glyphes conservés) produite par tools/subset_font.py. La police
+originale n'a aucun Reserved Font Name ; le nom d'origine n'est pas conservé.
+"""
+
+# Tables de référence issues du moteur Qt historique (crates/adh-core/tests/golden)
+[[package]]
+SPDX-FileCopyrightText = "2011-2026 Tristan Morvan"
+SPDX-License-Identifier = "MIT OR Apache-2.0"
+path = "crates/adh-core/tests/golden/**"
+comment = """
+Dumps CSV produits par ModelHarmonicManager (moteur Qt) avant la suppression de
+l'arborescence Qt. Le code d'origine est consultable au tag 1.0.
+"""
+
+# Visuels hors code : atlas, maquettes, sources graphiques, emballage
+[[package]]
+SPDX-FileCopyrightText = "2011-2026 Tristan Morvan"
+SPDX-License-Identifier = "MIT OR Apache-2.0"
+path = [
+  "atlasHarmoniques/**",
+  "maquette/**",
+  "images ressources/**",
+  "packaging/**",
+]
+

@@ -1,0 +1,26 @@
+[workspace]
+members = ["cargo:."]
+
+# Configuration de l'emballage (cargo-dist).
+# Doc : https://axodotdev.github.io/cargo-dist/book/reference/config.html
+[dist]
+cargo-dist-version = "0.32.0"
+
+# Pas de CI hébergée : cargo-dist 0.32 ne sait publier que sur GitHub Releases,
+# alors que le dépôt est sur Forgejo. Les archives sont donc construites localement
+# par tools/release.sh, qui ajoute les paquets système.
+ci = []
+
+# Pas d'installateurs shell/PowerShell/homebrew : L'Atlas est un applicatif
+# desktop qui s'installe par paquet (rpm, paquet Arch, archive décompressée).
+installers = []
+
+# Cibles construites ici. macOS et Windows demandent une CI sur ces plateformes :
+# ajouter « aarch64-apple-darwin », « x86_64-apple-darwin » et
+# « x86_64-pc-windows-msvc » ici quand une CI est branchée.
+targets = ["x86_64-unknown-linux-gnu"]
+
+# L'archive source est désactivée : le dépôt contient 300 Mo de ressources
+# graphiques, ce qui ferait une archive de release de plus de 250 Mo.
+source-tarball = false
+

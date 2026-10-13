@@ -1,0 +1,17 @@
+# Paquet Arch de L'Atlas des harmoniques.
+# Construit par tools/release.sh, qui dépose l'archive portable à côté du PKGBUILD.
+pkgname=adh
+pkgver=${ADH_VERSION:?ADH_VERSION doit être exporté par tools/release.sh}
+pkgrel=1
+pkgdesc="L'Atlas des harmoniques — harmoniques naturelles sur guitare et basse"
+arch=('x86_64')
+url="https://lecompositeur.com/adh"
+license=('MIT' 'Apache-2.0')
+depends=('glibc' 'libx11' 'mesa' 'wayland')
+source=('adh.tar.gz')
+sha256sums=('SKIP')
+
+package() {
+    cp -a "$srcdir/usr" "$pkgdir/"
+}
+

@@ -1,0 +1,13 @@
+[Desktop Entry]
+Type=Application
+Version=2.0
+Name=L'Atlas des harmoniques
+Name[en]=The Atlas of Harmonics
+Comment=Harmoniques naturelles sur guitare et basse, partiel par partiel
+Comment[en]=Natural harmonics on guitar and bass, partial by partial
+Exec=adh-app
+Icon=com.lecompositeur.adh
+Terminal=false
+StartupNotify=false
+Categories=Education;Music;
+Keywords=harmonics;guitar;bass;music;
