@@ -25,6 +25,8 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Preserve reference file line endings
+        run: git config --global core.autocrlf false
       - uses: actions/checkout@v4
       - name: Install Rust
         uses: dtolnay/rust-toolchain@stable
