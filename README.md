@@ -7,6 +7,19 @@ visuellement, sur une photo de l'instrument, pour les onze premiers partiels.
 Application née en C++/Qt en 2011, réécrite en Rust avec `egui`/`eframe` : la
 version 2.0 ne contient plus que du Rust.
 
+## Télécharger pour Windows
+
+Les exécutables Windows 64 bits sont disponibles dans les
+[Releases GitHub](https://github.com/csm-clem/ADH-Legacy/releases).
+Téléchargez `Atlas-des-harmoniques-Windows-x64.exe`, puis ouvrez-le :
+aucune installation de Rust n'est nécessaire. L'archive ZIP contient aussi
+les licences et la documentation.
+
+La [compilation automatique](https://github.com/csm-clem/ADH-Legacy/actions/workflows/windows-release.yml)
+exécute les tests, construit l'application et publie une nouvelle release
+après chaque modification du code sur `main`. Elle peut aussi être lancée
+manuellement depuis GitHub Actions avec **Run workflow**.
+
 ## État du projet
 
 Le moteur de calcul est **réécrit, testé et validé contre l'application Qt** :
